@@ -27,3 +27,18 @@ const images = [
     alt: 'Zebras on Zebra',
   },
 ];
+
+const gallery = document.querySelector('.gallery');
+const galleryItemsHTML = images
+  .map(
+    image => `
+  <li>
+    <img src="${image.url}" alt="${image.alt}" width="360"/>
+  </li>
+`,
+  )
+  .join('');
+
+gallery.innerHTML = galleryItemsHTML;
+
+gallery.style.display = 'flex';
